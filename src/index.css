@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+/* Google Fonts - Archivo*/
+
+
+/* Local fonts */
+@font-face {
+    font-family: "CerebriBold";
+    src: url("../public/fonts/Cerebri.otf");
+  }
+
+@font-face {
+    font-family: "CerebriMedium";
+    src: url("../public/fonts/Cerebri-Medium.otf");
+  }
+
+/* General options */
+
+body{
+    background-image: url("images/candles2.png");
+    background-position: center 70%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+button,
+textarea,
+input,
+select,
+a{
+ -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+ -webkit-tap-highlight-color: transparent;
+ -webkit-user-select: none;
+ -khtml-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+  user-select: none;
+
+}
+
+/* Buttons */
+
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: 18px;
+    font-family: inherit;
+  }
+  button.learn-more {
+    width: 12rem;
+    height: auto;
+  }
+  button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #fff;
+    border-radius: 1.625rem;
+  }
+  button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #111;
+  }
+  button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+  }
+  button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.25rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #111;
+    border-right: 0.125rem solid #111;
+    transform: rotate(45deg);
+  }
+  button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.68rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: center;
+  }
+  button:hover .circle {
+    width: 100%;
+  }
+  button:hover .circle .icon.arrow {
+    background: #111;
+    transform: translate(1rem, 0);
+  }
+  button:hover .button-text {
+    color: #111;
+  }
+
+  /* Preloader */
+  #introduction {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 105;
+    background-color: #0a0a0a;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+  }
+  #introduction .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    background: #111;
+    z-index: 103;
+  }
+  
+  .logoloading {
+    position: absolute;
+    z-index: 104;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+  
+  .slide {
+    z-index: 999;
+  }
+  
+  .logoColor {
+    z-index: 105;
+  }
+  
+  .img-container {
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .img-container:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #000;
+  }
+  
+  .img-container img {
+    transform: scale(1.2);
+    filter: blur(8px);
+    width: 100%;
+    position: absolute;
+  }
+  
+  .opacity-0 {
+    opacity: 0 !important;
+  }
+  
+  .opacity-100 {
+    opacity: 100 !important;
+  }
+
+  @media only screen and (max-width: 640px) {
+    body{
+      background-position: 48% 50px;
+      animation-name: bgAnim;
+      animation-delay: 0.8s;
+      animation-duration: 2.5s;
+      animation-timing-function: ease-out;
+  }
+  }
+
+/* Animations */
+@keyframes bgAnim {
+  from {background-position: 55% 50px;}
+  to {background-position: 48% 50px;}
+}
